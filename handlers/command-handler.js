@@ -10,6 +10,8 @@ function validatePermissions(permissions) {
   }
 }
 
+let recentlyRan = [];
+
 module.exports = async (client, commandOptions) => {
   let {
     commands,
@@ -20,6 +22,7 @@ module.exports = async (client, commandOptions) => {
     cooldown = -1,
     permissions = [],
     callback,
+    ownerOnly = false,
   } = commandOptions;
 
   if (typeof commands === 'string') {
@@ -43,6 +46,13 @@ module.exports = async (client, commandOptions) => {
       const command = `${prefix}${alias.toLowerCase()}`;
 
       if (content.toLowerCase().startsWith(`${command} `) || content.toLowerCase() === command) {
+        if (ownerOnly === true) {
+          if (!client.owners.includes(member.user.id)) {
+            message.reply(`This command is for owners only!`);
+            return;
+          };
+        };
+
         for (const permission of permissions) {
           if (!member.permissions.has(permission)) {
             message.reply(permissionError);
@@ -58,6 +68,22 @@ module.exports = async (client, commandOptions) => {
           message.reply(`Incorrect syntax! Please use: \`${prefix}${alias} ${expectedArgs}\``);
           return;
         };
+
+        let cooldownString = `${guild.id}-${member.id}-${commands[0]}`;
+
+        if (cooldown > 0 && recentlyRan.includes(cooldownString)) {
+          message.reply(`Woah woah chill! You can't use that command so soon!`);
+          return;
+        };
+
+        if (cooldown > 0) {
+          recentlyRan.push(cooldownString);
+          setTimeout(() => {
+            recentlyRan = recentlyRan.filter(string => {
+              return string !== cooldownString;
+            });
+          }, 1000 * cooldown);
+        }
 
         callback(message, args, args.join(' '), client);
 

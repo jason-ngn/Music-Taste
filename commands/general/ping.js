@@ -27,4 +27,5 @@ module.exports = {
       message.channel.send({ embeds: [pingEmbed] });
     })
   },
+  ownerOnly: true,
 }
