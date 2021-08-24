@@ -13,6 +13,7 @@ module.exports = async (client) => {
       } else if (file !== 'load-loaders.js') {
         const loader = require(path.join(__dirname, dir, file));
         loaders.push(file);
+        console.log(`Enabling loader: ${file}`);
         loader(client);
       }
     }

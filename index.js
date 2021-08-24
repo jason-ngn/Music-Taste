@@ -8,6 +8,7 @@ const client = new Discord.Client({
 });
 
 client.owners = [
+  '754982406393430098',
   '403925308320907276',
 ];
 

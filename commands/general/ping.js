@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   commands: 'ping',
   callback: async (message, args, text, client) => {
-    message.channel.send('Pinging').then(async msg => {
+    message.reply('Pinging').then(async msg => {
       await msg.edit('Pinging.');
       await msg.edit('Pinging..');
       await msg.edit('Pinging...');
@@ -23,9 +23,8 @@ module.exports = {
           value: `${client.ws.ping}ms`,
         }
       )
-      await msg.delete();
-      message.channel.send({ embeds: [pingEmbed] });
+
+      msg.edit({ embeds: [pingEmbed] });
     })
   },
-  ownerOnly: true,
-}
+};
