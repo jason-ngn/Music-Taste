@@ -7,7 +7,7 @@ module.exports = {
   expectedArgs: '<prefix>',
   permissions: ['ADMINISTRATOR'],
   callback: async (message, args, text) => {
-    await commandHandler.updatePrefix(message.guild, text);
+    await commandHandler.updatePrefixCache(message.guild, text);
 
     message.reply(`${message.guild.name}'s prefix is now: \`${text}\``);
   }

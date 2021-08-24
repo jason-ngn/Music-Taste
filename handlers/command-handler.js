@@ -1,6 +1,6 @@
 const validPermissions = require('../utils/permissions');
 const guildPrefix = {};
-const globalPrefix = '%';
+const globalPrefix = process.env.PREFIX;
 
 function validatePermissions(permissions) {
   for (const permission of permissions) {
@@ -67,6 +67,20 @@ module.exports = async (client, commandOptions) => {
   });
 };
 
-module.exports.updatePrefix = (guild, prefix) => {
+module.exports.updatePrefixCache = (guild, prefix) => {
+  // do mongo stuff
+
   guildPrefix[guild.id] = prefix;
+};
+
+module.exports.loadPrefix = async client => {
+  // do mongo stuff
+
+  for (const guild of client.guilds.cache) {
+    const guildId = guild[1].id;
+
+    guildPrefix[guildId] = globalPrefix;
+  };
+
+  console.log(`Loading prefix for ${client.guilds.cache.size} server(s)!`);
 }
