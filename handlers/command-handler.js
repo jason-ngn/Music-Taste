@@ -116,4 +116,8 @@ module.exports.loadPrefix = async client => {
   };
 
   console.log(`Loading prefix for ${client.guilds.cache.size} server(s)!`);
-}
+};
+
+module.exports.getPrefix = async (guild) => {
+  return guildPrefix[guild.id];
+};

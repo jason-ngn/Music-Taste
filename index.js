@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 const loadLoaders = require('./loaders/load-loaders');
 
 const client = new Discord.Client({
-  intents: ['GUILDS', 'DIRECT_MESSAGES', 'GUILD_MESSAGES'],
+  intents: ['GUILDS', 'DIRECT_MESSAGES', 'GUILD_MESSAGES', 'GUILD_BANS', 'GUILD_INVITES', 'GUILD_MEMBERS', 'GUILD_MESSAGE_REACTIONS'],
 });
 
 client.owners = [
