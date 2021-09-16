@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const mongoPath = 'mongodb+srv://Jason:620521@icybot.bcikm.mongodb.net/IcyBot-DiscordJS-13?retryWrites=true&w=majority';
 let totalMembers = 0;
 let totalServers = 0;
+const {
+  putBotInfo
+} = require('../utils/api');
 
 module.exports = async (client) => {
   client.on('ready', async () => {
@@ -14,7 +17,7 @@ module.exports = async (client) => {
     console.log(`${client.user.tag} has logged in!`);
     console.log(`Listening to ${totalMembers.toLocaleString()} user(s), ${totalServers.toLocaleString()} server(s)!`);
 
-    mongoose.connect(mongoPath, {
+    await mongoose.connect(mongoPath, {
       keepAlive: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -25,6 +28,18 @@ module.exports = async (client) => {
       throw err;
     });
 
-    commandHandler.loadPrefix(client);
+    const botInfo = {
+      id: client.user.id,
+      tag: client.user.tag,
+      guilds: totalServers,
+      users: totalMembers,
+      channels: client.channels.cache.size,
+    };
+
+    await commandHandler.loadPrefix(client);
+    
+    await putBotInfo(botInfo).catch(err => {
+      console.error(err);
+    });
   });
 };

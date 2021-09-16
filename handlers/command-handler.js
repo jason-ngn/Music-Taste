@@ -1,7 +1,9 @@
+require('dotenv').config();
 const validPermissions = require('../utils/permissions');
 const guildPrefix = {};
 const globalPrefix = process.env.PREFIX;
 const perServerPrefixSchema = require('../schemas/per-server-prefix');
+const languageHandler = require('../language/language');
 
 function validatePermissions(permissions) {
   for (const permission of permissions) {
@@ -86,7 +88,7 @@ module.exports = async (client, commandOptions) => {
           }, 1000 * cooldown);
         }
 
-        callback(message, args, args.join(' '), client);
+        callback(message, args, args.join(' '), client, languageHandler);
 
         return;
       };

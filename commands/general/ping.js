@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   commands: 'ping',
+  description: 'Pong!',
   callback: async (message, args, text, client) => {
     message.reply('Pinging').then(async msg => {
       await msg.edit('Pinging.');

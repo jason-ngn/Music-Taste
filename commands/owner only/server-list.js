@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
   commands: 'serverlist',
   ownerOnly: true,
-  callback: async (message, args, text, client) => {
+  callback: async (message, args, text, client, languageHandler) => {
     const { guild } = message;
 
     const embed = new Discord.MessageEmbed()
@@ -18,6 +18,12 @@ module.exports = {
         }
       );
     }
+
+    const language = languageHandler(guild, 'Hello').then(res => {
+      return res;
+    })
+
+    console.log(language);
 
     message.reply({ embeds: [embed] });
   }

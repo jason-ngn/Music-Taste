@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+  background-color: #3a4149;
+}
+
+body {
+  font-family: 'Urbanist', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav {
+  overflow: hidden;
+  padding: 10px;
+  margin: 0 200px;
+}
+
+.topnav a {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.2s;
+}
+
+.bot_logo {
+  float: left;
+  border-radius: 50%;
+  width: 50px;
+}
+
+.topnav a:hover {
+  cursor: pointer;
+  color: orange;
+}
+
+.title_span {
+  text-align: center;
+  display: flex;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.bot-logo-section {
+  flex: 50%;
+  max-width: 50%;
+  width: 50%;
+  text-align: right;
+  padding: 10px;
+}
+
+.bot-logo-section img {
+  width: 40%;
+  height: 100%;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.code {
+  padding: 4px;
+  background-color: inherit;
+}
+
+.bot-introduction {
+  flex: 50%;
+  max-width: 50%;
+  width: 50%;
+  text-align: left;
+  padding: 10px;
+  color: white;
+  margin-top: 0.5px;
+}
+
+.bot-introduction h1 {
+  font-size: 55px;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.bot-introduction h3 {
+  font-size: 28px;
+}
+
+.bot-introduction a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 15px 25px;
+  border: 3px solid white;
+  border-radius: 50px;
+  transition: 0.2s;
+}
+
+#guilds {
+  margin-bottom: 40px;
+  font-size: 23px;
+}
+
+.bot-introduction a:hover {
+  background-color: white;
+  color: #3a4149;
+  border: 3px solid #3a4149;
+}
+
+footer {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  max-height: 100%;
+  height: 100%;
+}
+
+.footer {
+  padding: 10px;
+  background-color: black;
+  margin: 0 200px;
+  font-size: 20px;
+  display: flex;
+}
+
+.copyright {
+  flex: 50%;
+  max-width: 50%;
+  width: 50%;
+  background-color: inherit;
+}
+
+.copyright h3 {
+  background-color: inherit;
+  font-size: 30px;
+}
+
+.information {
+  flex: 50%;
+  max-width: 50%;
+  width: 50%;
+  background-color: inherit;
+}
+
+.information p {
+  text-align: right;
+  background-color: inherit;
+  font-size: 20px;
+}
+
+.section-1 {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  margin: 0 200px;
+}
+
+.left-side {
+  flex: 50%;
+  padding: 10px;
+  max-width: 50%;
+  width: 50%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+.right-size {
+  flex: 50%;
+  padding: 10px;
+  max-width: 50%;
+  width: 50%;
+  text-align: center;
+  color: white;
+}
+
+hr {
+  margin: 30px 200px;
+}
+
+.command-page-title {
+  color: white;
+  margin: 0 300px;
+  text-align: left;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.command-page-description {
+  color: white;
+  margin: 0 300px;
+  font-size: 20px;
+}
+
+.code {
+  font-size: 17px;
+}
+
+.command-selection {
+  margin: 0 300px;
+}
+
+.command-selection a {
+  padding: 10px;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+}
+
+.commands {
+  display: flex;
+}
+
+.command-display {
+  margin: 0 400px;
+  color: white;
+  flex: 85%;
+  width: 85%;
+  max-width: 85%;
+}
+
+.group-title {
+  font-size: 25px;
+}
+
+.command-box {
+  margin: 0 60px;
+}
+
+.accordion {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding-left: 20px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  text-align: left;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: black;
+  cursor: pointer;
+}
+
+.strong {
+  font-size: 15px;
+  font-weight: lighter;
+  background-color: black;
+}
+
+.panel-hide {
+  display: none;
+}
+
+.panel-show {
+  padding-left: 20px;
+  padding-top: 9px;
+  font-size: 18px;
+  color: white;
+  display: block;
+  margin-top: 0;
+  background-color: black;
+  cursor:initial;
+}
+
+.panel-strong {
+  background-color: black;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.panel-show p {
+  background-color: inherit;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.command-selection-bar {
+  flex: 15%;
+  width: 15%;
+  max-width: 15%;
+  float: right;
+  right: 0;
+  text-align: left;
+  position: fixed;
+  background-color: inherit;
+  padding-top: 20px;
+}
+
+.command-selection-bar a {
+  padding: 5px;
+  text-decoration: none;
+  display: block;
+  color: white;
+  transition: 0.2s;
+}
+
+.command-selection-bar a:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.general-description {
+  color: white;
+  margin: 0 200px;
+}
+
+#description-title-h3 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.description-section {
+  display: flex;
+  flex-direction: row;
+  margin: 0 20px;
+}
+
+.description-section p {
+  flex: 33%;
+  max-width: 33%;
+  width: 33%;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.staff-page-title {
+  color: white;
+  margin: 0 300px;
+  text-align: left;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.staff-page-description {
+  color: white;
+  margin: 0 300px;
+  font-size: 20px;
+}
+
+.staff-display {
+  margin: 0 300px;
+  color: white;
+}
+
+.staff-group-title {
+  font-size: 25px;
+}
+
+.staffs {
+  display: flex;
+  margin: 0 30px;
+}
+
+.staff-box {
+  font-size: 18px;
+  margin-right: 10px;
+  background-color: black;
+  padding: 20px;
+  max-width: 280px;
+  transition: 0.5s;
+}
+
+.staff-box:hover {
+  box-shadow: 8px 8px 10px 0 gray;
+}
+
+.staff-box p {
+  background-color: inherit;
+}
+
+.upper-part {
+  display: flex;
+  background-color: black;
+  max-width: 50%;
+}
+
+.upper-part img {
+  flex: 50%;
+  background-color: black;
+  width: 100px;
+  height: 100px;
+}
+
+.staff-box-title {
+  flex: 50%;
+  background-color: inherit;
+  margin-left: 10px;
+  margin-top: 0;
+}
+
+.staff-box-title h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 5px;
+  margin-left: 10px;
+  background-color: inherit;
+  font-size: 29px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.staff-box-title p {
+  margin-top: 0;
+  padding-top: 0;
+  padding-left: 5px;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.lower-part {
+  background-color: inherit;
+  overflow: auto auto;
+  margin-top: 10px;
+  width: 100%;
+  height: 30%;
+  padding: 10px;
+}

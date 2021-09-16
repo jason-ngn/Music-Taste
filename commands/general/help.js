@@ -38,7 +38,9 @@ module.exports = {
   expectedArgs: '[command]',
   callback: async (message, args, text, client) => {
     const groups = await readGroups('../../commands');
-    const prefix = await getPrefix(message.guild);
+    const prefix = await getPrefix(message.guild).then(prefix => {
+      return prefix;
+    });
 
     if (args.length) {
       const commands = [];
@@ -127,6 +129,14 @@ module.exports = {
       return;
     };
 
+    const row = new Discord.MessageActionRow()
+    .addComponents(
+      new Discord.MessageButton()
+      .setLabel('IcyBot Official Website!')
+      .setStyle('LINK')
+      .setURL('http://192.168.0.102:3003/main')
+    )
+
     const helpEmbed = new Discord.MessageEmbed()
     .setAuthor('Support Server', client.user.displayAvatarURL(), 'https://discord.gg/6JBMEbyb3c')
     .setColor('WHITE')
@@ -155,6 +165,6 @@ module.exports = {
       helpEmbed.addField(groupName, commandsName.join(', '));
     };
 
-    message.reply({ embeds: [helpEmbed] });
+    message.reply({ embeds: [helpEmbed], components: [row] });
   }
 }
