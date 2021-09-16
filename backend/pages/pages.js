@@ -6,7 +6,7 @@ const { getCommands } = require('../../utils/get-commands');
 require('ejs');
 
 router.get('/', async (req, res) => {
-  res.redirect('http://localhost:3003/main');
+  res.redirect('https://website-test-ah.herokuapp.com/main');
 });
 
 router.get('/main', async (req, res) => {
