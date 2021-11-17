@@ -1,0 +1,10 @@
+{
+  "language": ["english", "vietnamese"],
+  "iso-code": ["en", "vi"],
+  "translations": {
+    "THE_SUM_IS": {
+      "english": "The sum is: {sum}",
+      "vietnamese": "Kết quả là: {sum}"
+    }
+  }
+}

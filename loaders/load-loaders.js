@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = async (client) => {
+module.exports = async (client, manager) => {
   const loaders = [];
 
   const readLoaders = async (dir) => {
@@ -14,7 +14,7 @@ module.exports = async (client) => {
         const loader = require(path.join(__dirname, dir, file));
         loaders.push(file);
         console.log(`Enabling loader: ${file}`);
-        loader(client);
+        loader(client, manager);
       }
     }
   }

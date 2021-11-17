@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = async (client) => {
+module.exports = async (client, manager) => {
   const features = [];
 
   const readFeatures = async dir => {
@@ -14,7 +14,7 @@ module.exports = async (client) => {
         const feature = require(path.join(__dirname, dir, file));
         features.push(file);
         console.log(`Enabling feature: ${file}`);
-        feature(client);
+        feature(client, manager);
       }
     }
   };

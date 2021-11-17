@@ -10,7 +10,10 @@
     "pm2": "pm2 start index.js",
     "restart": "pm2 restart 0",
     "start": "node index.js",
-    "bundle": "browserify ./frontend/scripts/script.js -o ./frontend/scripts/bundle.js"
+    "bundle": "browserify ./frontend/scripts/script.js -o ./frontend/scripts/bundle.js",
+    "surge": "surge",
+    "ngrok": "ngrok authtoken 1yD8J41vf9TG09xYpH9GINHfvUF_2t3nBcdXbRAhvsiny4sBc",
+    "translate": "nodemon ./language/language.js"
   },
   "keywords": [],
   "author": "",
@@ -20,16 +23,21 @@
     "@discordjs/rest": "^0.1.0-canary.0",
     "@discordjs/voice": "^0.6.0",
     "@vitalets/google-translate-api": "^7.0.0",
+    "aki-api": "^6.0.8",
+    "atob": "^2.1.2",
     "axios": "^0.21.4",
-    "browserify": "^17.0.0",
     "discord-api-types": "^0.22.0",
     "discord.js": "^13.1.0",
+    "discord.js-akinator": "^3.2.1",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
+    "erela.js": "^2.3.3",
     "express": "^4.17.1",
     "ffmpeg-static": "^4.4.0",
+    "figlet": "^1.5.2",
     "fs": "^0.0.1-security",
     "libsodium-wrappers": "^0.7.9",
+    "mathjs": "^9.4.5",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
     "mongodb": "^4.1.0",
@@ -37,8 +45,8 @@
     "nodemon": "^2.0.12",
     "path": "^0.12.7",
     "pm2": "^5.1.1",
-    "translate": "^1.2.3",
-    "watchify": "^4.0.0"
+    "surge": "^0.23.0",
+    "translate": "^1.2.3"
   },
   "engines": {
     "node": "16.x"

@@ -22,6 +22,7 @@ const loadChannels = async () => {
  * @param {Discord.Client} client
  */
 const newYearCounter = async (channelCache, client) => {
+  loadChannels();
   function addZero(num, count) {
     return num.toString().padStart(count, '0');
   };
@@ -59,6 +60,8 @@ const newYearCounter = async (channelCache, client) => {
     };
 
     const channel = guild.channels.cache.get(channelId);
+
+    if (!channel) return;
 
     if ((await channel.messages.fetch()).size < 1) {
       if (
@@ -105,8 +108,6 @@ const newYearCounter = async (channelCache, client) => {
     }, 1000 * 1);
   }
 }
-
-loadChannels();
 /**
  * 
  * @param {Discord.Client} client 
