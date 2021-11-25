@@ -3,9 +3,7 @@ const Discord = require('discord.js');
 const musicManager = require('./music-manager');
 
 const loadLoaders = require('./loaders/load-loaders');
-const { loadLanguages } = require('./language/language');
 const backend = require('./backend/app');
-const { Manager } = require('erela.js');
 const commandHandler = require('./handlers/command-handler');
 const mongoose = require('mongoose');
 const mongoPath = 'mongodb+srv://Jason:620521@icybot.bcikm.mongodb.net/IcyBot-DiscordJS-13?retryWrites=true&w=majority';

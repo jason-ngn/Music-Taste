@@ -9,9 +9,9 @@ module.exports = async (client) => {
   const manager = new Erela.Manager({
     nodes: [
       {
-        host: 'bh002.bluefoxhost.com',
-        port: 4011,
-        password: 'lavalinkYeetDesigns'
+        host: 'lava.link',
+        port: 80,
+        password: 'anythingasapassword'
       }
     ],
     send(id, payload) {
