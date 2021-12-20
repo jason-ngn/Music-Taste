@@ -6,7 +6,7 @@ const loadLoaders = require('./loaders/load-loaders');
 const backend = require('./backend/app');
 const commandHandler = require('./handlers/command-handler');
 const mongoose = require('mongoose');
-const mongoPath = 'mongodb+srv://Jason:620521@icybot.bcikm.mongodb.net/IcyBot-DiscordJS-13?retryWrites=true&w=majority';
+const mongoPath = process.env.MONGO_URI
 let totalMembers = 0;
 let totalServers = 0;
 let i = 0;
